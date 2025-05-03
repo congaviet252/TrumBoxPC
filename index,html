@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrumBoxPC - Dịch vụ Cloud PC Gaming với độ trễ cực thấp, không cần PC mạnh. Chơi mọi lúc, mọi nơi trên mọi thiết bị. Giá chỉ 3k/1h.">
+    <meta name="keywords" content="TrumBoxPC, cloud gaming, PC gaming, game streaming, game online, cloud PC, cloud gaming Việt Nam">
+    <title>TrumBoxPC - Dịch vụ Cloud PC Gaming Hàng Đầu Việt Nam</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f0ff',
+                            100: '#e1e0ff',
+                            200: '#c5c4fe',
+                            300: '#a8a7fc',
+                            400: '#8987f7',
+                            500: '#7270f2',
+                            600: '#5D5CDE', // Primary color
+                            700: '#4c4ab8',
+                            800: '#403f94',
+                            900: '#353476',
+                            950: '#201f46',
+                        },
+                        dark: {
+                            primary: '#181818',
+                            secondary: '#232323',
+                            accent: '#2d2d2d',
+                        },
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #5D5CDE 0%, #7270f2 100%);
+        }
+        
+        .stats-card {
+            backdrop-filter: blur(16px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dark .stats-card {
+            background-color: rgba(45, 45, 45, 0.4);
+            border: 1px solid rgba(70, 70, 70, 0.2);
+        }
+        
+        .dark .stats-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-white dark:bg-dark-primary text-gray-800 dark:text-gray-200 transition-colors duration-300">
+    <!-- Dark mode toggle -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 focus:outline-none">
+            <i class="fas fa-sun dark:hidden"></i>
+            <i class="fas fa-moon hidden dark:block"></i>
+        </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC40Ij48cGF0aCBkPSJNMzYgMzRjMC0yLjIwOS0xLjc5LTQtNC00cy00IDEuNzkxLTQgNCAyIDQgNCA0IDQtMS43OTEgNC00TTE2IDI0YzAtMi4yMDktMS43OS00LTQtNHMtNCAxLjc5MS00IDQgMS43OSA0IDQgNCA0LTEuNzkxIDQtNHptNDAgMzJjMCAyLjIwOS0xLjc5MSA0LTQgNC0yLjIxIDAtNC0xLjc5MS00LTRzMS43OS00IDQtNGMyLjIwOSAwIDQgMS43OTEgNCA0eiI+PC9wYXRoPjwvZz48L2c+PC9zdmc+'); 
+            background-repeat: repeat;"></div>
+        </div>
+
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0 fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">TrumBoxPC</h1>
+                    <p class="text-xl md:text-2xl font-light mb-6">Phiên bản PC tối ưu</p>
+                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl inline-block mb-8">
+                        <p class="text-lg font-medium">Trải nghiệm qua <span class="text-yellow-300 font-bold">Discord</span></p>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Cloud PC Gaming <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 to-yellow-500">Không Giới Hạn</span></h2>
+                    <p class="text-lg mb-6">Trải nghiệm game AAA với độ trễ cực thấp, không cần PC mạnh. Chơi mọi lúc, mọi nơi trên mọi thiết bị.</p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                        <a href="#features" class="bg-white text-primary-600 font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 text-center">Tìm hiểu thêm</a>
+                        <div class="bg-primary-700 py-3 px-8 rounded-full flex items-center justify-center">
+                            <span class="font-bold">Chỉ </span>
+                            <span class="text-xl font-bold mx-1">3K</span>
+                            <span class="font-medium">/1 giờ</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center fade-in delay-200">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary-500/30 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow"></div>
+                        <div class="relative">
+                            <!-- SVG Gaming PC Illustration -->
+                            <svg width="300" height="300" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="w-64 h-64 md:w-80 md:h-80">
+                                <path d="M52 14H12c-1.1 0-2 .9-2 2v32c0 1.1.9 2 2 2h40c1.1 0 2-.9 2-2V16c0-1.1-.9-2-2-2z" fill="#5D5CDE"/>
+                                <path d="M12 14h40c1.1 0 2 .9 2 2v26H10V16c0-1.1.9-2 2-2z" fill="#7270f2"/>
+                                <path d="M10 42h44v4c0 1.1-.9 2-2 2H12c-1.1 0-2-.9-2-2v-4z" fill="#403f94"/>
+                                <path d="M18 46h28v2H18z" fill="#353476"/>
+                                <path d="M54 48H10c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h44c1.1 0-2 2-2 2v-2c0-1.1-.9-2-2-2z" fill="#201f46"/>
+                                <path fill="#fff" d="M14 18h36v22H14z"/>
+                                <path fill="#e1e0ff" d="M15 19h34v20H15z"/>
+                                <g fill="#5D5CDE">
+                                    <circle cx="40" cy="44" r="1"/>
+                                    <path d="M23 45h18v2H23z"/>
+                                </g>
+                                <path d="M36 34c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4z" fill="#7270f2"/>
+                                <path d="M18 26c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm0 8c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z" fill="#5D5CDE"/>
+                                <path d="M50 26c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm0 8c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2z" fill="#5D5CDE"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Section in Hero -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="stats-card rounded-2xl p-4 md:p-6 text-center fade-in delay-100">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">100+</h3>
+                    <p class="text-sm md:text-base font-medium">Games</p>
+                </div>
+                <div class="stats-card rounded-2xl p-4 md:p-6 text-center fade-in delay-200">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">24/7</h3>
+                    <p class="text-sm md:text-base font-medium">Uptime</p>
+                </div>
+                <div class="stats-card rounded-2xl p-4 md:p-6 text-center fade-in delay-300">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">< 20ms</h3>
+                    <p class="text-sm md:text-base font-medium">Latency</p>
+                </div>
+                <div class="stats-card rounded-2xl p-4 md:p-6 text-center fade-in delay-400">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2">1000+</h3>
+                    <p class="text-sm md:text-base font-medium">Users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 bg-gray-50 dark:bg-dark-secondary">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tính Năng Nổi Bật</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card rounded-2xl p-6 bg-white dark:bg-dark-accent shadow-lg">
+                    <div class="text-primary-600 mb-4">
+                        <i class="fas fa-bolt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Độ Trễ Thấp</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Trải nghiệm gaming mượt mà với độ trễ cực thấp, không giật lag</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card rounded-2xl p-6 bg-white dark:bg-dark-accent shadow-lg">
+                    <div class="text-primary-600 mb-4">
+                        <i class="fas fa-desktop text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Đa Nền Tảng</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Chơi game trên mọi thiết bị: PC, Mobile, Tablet</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card rounded-2xl p-6 bg-white dark:bg-dark-accent shadow-lg">
+                    <div class="text-primary-600 mb-4">
+                        <i class="fas fa-shield-alt text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">An Toàn & Bảo Mật</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Dữ liệu game được lưu trữ an toàn trên cloud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section class="py-20 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="bg-primary-600 text-white rounded-3xl overflow-hidden shadow-xl">
+                <div class="p-8 md:p-12">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="w-full md:w-2/3 mb-8 md:mb-0">
+                            <h2 class="text-3xl md:text-4xl font-bold mb-6">Bản Cài Đặt Trên PC</h2>
+                            <p class="text-lg mb-8">Trải nghiệm TrumBoxPC thông qua Discord. Đơn giản, nhanh chóng và tiện lợi.</p>
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="bg-white text-primary-600 font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 flex items-center">
+                                    <i class="fab fa-discord mr-2 text-xl"></i>
+                                    Tham gia Discord
+                                </a>
+                                <a href="#" class="bg-primary-700 border border-white/20 font-bold py-3 px-8 rounded-full hover:bg-primary-800 transition duration-300">
+                                    Hướng dẫn cài đặt
+                                </a>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/3 flex justify-center">
+                            <div class="relative">
+                                <!-- SVG Discord Logo -->
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="w-32 h-32 md:w-48 md:h-48">
+                                    <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Download App Section -->
+    <section class="py-20 px-4 bg-gray-50 dark:bg-dark-secondary">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tải Ứng Dụng TrumBoxPC</h2>
+                <div class="w-20 h-1 bg-primary-600 mx-auto"></div>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto">Tải ứng dụng TrumBoxPC về máy tính của bạn để có trải nghiệm tốt nhất.</p>
+            </div>
+
+            <div class="bg-white dark:bg-dark-accent rounded-3xl shadow-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Phiên Bản Cho Windows</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Phiên bản tối ưu dành riêng cho hệ điều hành Windows với hiệu suất cao nhất.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Hỗ trợ Windows 10/11</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Độ trễ thấp hơn</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-primary-600 mt-1 mr-2"></i>
+                                <span class="text-gray-700 dark:text-gray-300">Tự động cập nhật</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="bg-primary-600 text-white font-bold py-3 px-8 rounded-full hover:bg-primary-700 transition duration-300 inline-flex items-center">
+                            <i class="fas fa-download mr-2"></i>
+                            Tải xuống (Windows)
+                        </a>
+                    </div>
+                    <div class="w-full md:w-1/2 bg-gray-100 dark:bg-dark-primary p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-4">Yêu Cầu Hệ Thống</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-gray-200">Hệ điều hành</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Windows 10 (64-bit) hoặc mới hơn</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-gray-200">RAM</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Tối thiểu 4GB (Khuyến nghị 8GB)</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-gray-200">Mạng</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Kết nối internet ổn định, tối thiểu 10Mbps</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 dark:text-gray-200">Dung lượng lưu trữ</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Tối thiểu 500MB dung lượng trống</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-gray-50 dark:bg-dark-secondary">
+        <div class="container mx-auto max-w-6xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Sẵn sàng trải nghiệm Cloud Gaming?</h2>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">Hãy tham gia ngay hôm nay và trải nghiệm cảm giác chơi game mượt mà, không giới hạn với TrumBoxPC.</p>
+            <a href="#" class="bg-primary-600 text-white font-bold py-4 px-10 rounded-full hover:bg-primary-700 transition duration-300 inline-block">Bắt đầu ngay</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-4">TrumBoxPC</h2>
+                    <p class="text-gray-400 max-w-xs">Dịch vụ Cloud PC Gaming hàng đầu Việt Nam. Trải nghiệm không giới hạn, chơi mọi lúc, mọi nơi.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Liên Kết</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Trang Chủ</a></li>
+                            <li><a href="#features" class="text-gray-400 hover:text-white transition duration-300">Tính Năng</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Bảng Giá</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Discord</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Hỗ Trợ</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Hướng Dẫn</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Liên Hệ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Theo Dõi</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-discord text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2023 TrumBoxPC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        
+        // Check user preference on page load
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        // Listen for changes in user preference
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+        
+        // Toggle dark mode when button is clicked
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.feature-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Initialize animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
